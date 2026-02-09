@@ -1,0 +1,93 @@
+Planejamento Técnico do Projeto SIVIG-GILQ
+1. Contexto da Solução
+
+O projeto SIVIG-GILQ tem como objetivo a criação de um modelo de score capaz de identificar casos suspeitos em tempo real, padronizando o processo de triagem clínica e fechando o ciclo da vigilância epidemiológica por meio da integração com o SINAN, garantindo rastreabilidade, agilidade e confiabilidade na investigação dos casos.
+
+A solução permitirá analisar sinais e sintomas associados a doenças como dengue, leptospirose e meningite, fornecendo ao profissional de saúde um apoio à tomada de decisão no momento da triagem.
+
+2. Arquitetura Técnica Proposta
+
+Para viabilizar a solução, será necessária a implementação de uma arquitetura composta por banco de dados, aplicação backend e interface de visualização.
+
+🔹 Banco de Dados
+
+Será criado um banco de dados centralizado para:
+
+Armazenar os dados preenchidos nas fichas de triagem
+
+Garantir persistência, segurança e rastreabilidade das informações
+
+Permitir acesso remoto pelos membros do projeto
+
+O banco deverá estar hospedado em um servidor acessível pela rede, possibilitando comunicação com múltiplas máquinas.
+
+🔹 Backend / Comunicação com o Banco
+
+Será desenvolvido um sistema utilizando a linguagem Python, responsável por:
+
+Realizar a comunicação entre a aplicação e o banco de dados
+
+Validar, inserir e consultar os dados de triagem
+
+Processar as informações necessárias para o cálculo do score de risco
+
+🔹 Interface de Triagem e Visualização (Streamlit)
+
+Será desenvolvida uma aplicação web utilizando Streamlit, que permitirá:
+
+Alimentação do banco de dados em tempo real durante a triagem médica
+
+Exibição imediata dos resultados do modelo de score
+
+Visualização das probabilidades associadas às possíveis causas (dengue, leptospirose e meningite)
+
+Apoio à definição do diagnóstico clínico inicial
+
+Além disso, a interface apresentará gráficos e indicadores, permitindo análises quantitativas sobre:
+
+Quantidade de pacientes triados
+
+Distribuição dos scores por doença
+
+Evolução dos casos ao longo do tempo
+
+3. Etapas do Planejamento Técnico
+1️⃣ Criação do Banco de Dados
+
+Definir o modelo de dados (tabelas, campos e relacionamentos)
+
+Configurar um servidor de banco de dados acessível aos membros do grupo
+
+Garantir segurança e controle de acesso
+
+2️⃣ Desenvolvimento da Aplicação de Triagem (Streamlit)
+
+Criar formulários para entrada dos dados clínicos
+
+Implementar a lógica de comunicação com o banco de dados
+
+Integrar o modelo de score
+
+Exibir, ao final da triagem, as porcentagens das possíveis causas raiz
+
+3️⃣ Versionamento e Colaboração
+
+Criar um repositório Git para:
+
+Compartilhar scripts de criação do banco de dados
+
+Versionar o código da aplicação (Streamlit e backend)
+
+Facilitar a colaboração entre os membros do time
+
+4. Benefícios da Solução
+
+Padronização do processo de triagem
+
+Redução do tempo de resposta na identificação de casos suspeitos
+
+Apoio à decisão clínica baseado em dados
+
+Rastreabilidade dos casos por meio da integração com o SINAN
+
+Facilidade de manutenção e evolução da solução
