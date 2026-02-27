@@ -91,3 +91,5 @@ Apoio à decisão clínica baseado em dados
 Rastreabilidade dos casos por meio da integração com o SINAN
 
 Facilidade de manutenção e evolução da solução
+
+Lucimara
