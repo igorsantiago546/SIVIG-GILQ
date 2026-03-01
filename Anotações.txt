@@ -93,3 +93,5 @@ Rastreabilidade dos casos por meio da integração com o SINAN
 Facilidade de manutenção e evolução da solução
 
 Lucimara
+
+Ajustes realizados por Lucimara
