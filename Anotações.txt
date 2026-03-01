@@ -92,4 +92,36 @@ Rastreabilidade dos casos por meio da integração com o SINAN
 
 Facilidade de manutenção e evolução da solução
 
-Lucimara
+Lucimara 01/03/2026
+
+Foi configurado o ambiente Python no VS Code, com instalação das bibliotecas pandas e numpy, além da configuração do Jupyter Notebook.
+
+A base original em formato CSV foi importada e tratada. Foram realizados:
+
+Padronização dos nomes das colunas
+
+Correção de inconsistências
+
+Conversão de datas
+
+Identificação de registros com erro de data
+
+Em seguida, os sintomas foram transformados em variáveis numéricas (0 e 1), permitindo o cálculo de escores clínicos.
+
+Foram criados três scores:
+
+Score Dengue
+
+Score Leptospirose
+
+Score Meningite
+
+Com base nesses escores, foi criada uma variável de classificação automática, indicando a suspeita mais provável ou ausência de suspeita.
+
+Após o tratamento, foram geradas duas bases:
+
+BaseTratadas/SIVIG_GILQ_TRATADA.csv – base limpa com scores e classificação
+
+BaseTratadas/SIVIG_GILQ_ANALITICA.csv – base pronta para análise e futura modelagem
+
+Por fim, o projeto foi versionado e atualizado no GitHub utilizando comandos git add, git commit e git push.
