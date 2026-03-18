@@ -125,4 +125,5 @@ BaseTratadas/SIVIG_GILQ_TRATADA.csv – base limpa com scores e classificação
 BaseTratadas/SIVIG_GILQ_ANALITICA.csv – base pronta para análise e futura modelagem
 
 Por fim, o projeto foi versionado e atualizado no GitHub utilizando comandos git add, git commit e git push.
-Gabriel LiNDAO
+
+
