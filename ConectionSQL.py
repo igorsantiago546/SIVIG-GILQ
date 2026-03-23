@@ -20,6 +20,29 @@ dados_conexao = (
 tabela_alvo = "aluno"
 nome_arquivo_sqlite = "meu_banco_exportado.db"
 
+try:
+    conexao = pyodbc.connect(sql_server_config)
+    print("Conexão estabelecida!")
+    
+    # 3. Agora o cursor reconhece a conexao
+    cursor = conexao.cursor()
+    
+    # Exemplo de INSERT
+    sql = "INSERT INTO aluno (Nome, Idade) VALUES (?, ?)"
+    valores = ('Marjorie Santos', 33)
+    
+    cursor.execute(sql, valores)
+    conexao.commit()
+    print("Dados inseridos!")
+
+except Exception as e:
+    print(f"Erro: {e}")
+
+finally:
+    # 4. Sempre feche se a conexao existir
+    if 'conexao' in locals():
+        conexao.close()
+
 def exportar_sql_para_sqlite():
     try:
         # Conecta no SQL Server
@@ -55,26 +78,3 @@ def exportar_sql_para_sqlite():
         if 'conn_sqlite' in locals(): conn_sqlite.close()
         
 exportar_sql_para_sqlite()
-
-try:
-    conexao = pyodbc.connect(sql_server_config)
-    print("Conexão estabelecida!")
-    
-    # 3. Agora o cursor reconhece a conexao
-    cursor = conexao.cursor()
-    
-    # Exemplo de INSERT
-    sql = "INSERT INTO aluno (Nome, Idade) VALUES (?, ?)"
-    valores = ('Igor Santiago Macedo', 23)
-    
-    cursor.execute(sql, valores)
-    conexao.commit()
-    print("Dados inseridos!")
-
-except Exception as e:
-    print(f"Erro: {e}")
-
-finally:
-    # 4. Sempre feche se a conexao existir
-    if 'conexao' in locals():
-        conexao.close()
