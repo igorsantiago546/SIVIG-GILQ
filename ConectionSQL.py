@@ -1,13 +1,21 @@
 import sqlite3
 import pyodbc
 
+
+
 # 1. Configurações de Conexão
 sqlite_db = 'seu_arquivo.db'
 sql_server_config = (
-    "Driver={SQL Server Native Client 11.0};" # Ou "ODBC Driver 17 for SQL Server"
-    "Server=ec2-100-51-226-160.compute-1.amazonaws.com;"
+    "Driver={ODBC Driver 17 for SQL Server};"
+    "Server=100.51.226.160,1433;" # Vírgula 1433 força a porta
     "Database=faculdadeimpacta;"
-    "Trusted_Connection=yes;" # Use UID e PWD se não for autenticação Windows
+    "UID=igoradm;"
+    "PWD=Impacta123456;"
+    "TrustServerCertificate=yes;"# A senha que você definiu na instalação # Use UID e PWD se não for autenticação Windows
+)
+
+dados_conexao = (
+    
 )
 tabela_alvo = "aluno"
 nome_arquivo_sqlite = "meu_banco_exportado.db"
@@ -48,3 +56,25 @@ def exportar_sql_para_sqlite():
         
 exportar_sql_para_sqlite()
 
+try:
+    conexao = pyodbc.connect(sql_server_config)
+    print("Conexão estabelecida!")
+    
+    # 3. Agora o cursor reconhece a conexao
+    cursor = conexao.cursor()
+    
+    # Exemplo de INSERT
+    sql = "INSERT INTO aluno (Nome, Idade) VALUES (?, ?)"
+    valores = ('Igor Santiago Macedo', 23)
+    
+    cursor.execute(sql, valores)
+    conexao.commit()
+    print("Dados inseridos!")
+
+except Exception as e:
+    print(f"Erro: {e}")
+
+finally:
+    # 4. Sempre feche se a conexao existir
+    if 'conexao' in locals():
+        conexao.close()
