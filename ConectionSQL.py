@@ -3,6 +3,7 @@ import pyodbc
 
 
 
+
 # 1. Configurações de Conexão
 sqlite_db = 'seu_arquivo.db'
 sql_server_config = (
@@ -29,7 +30,7 @@ try:
     
     # Exemplo de INSERT
     sql = "INSERT INTO aluno (Nome, Idade) VALUES (?, ?)"
-    valores = ('Marjorie Santos', 33)
+    valores = ('Osvaldo Cruz', 102)
     
     cursor.execute(sql, valores)
     conexao.commit()

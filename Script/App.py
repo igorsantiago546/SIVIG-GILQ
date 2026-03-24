@@ -1,9 +1,18 @@
-st.write('**SIVIG-GILQ**')
-st.sidebar.hearder('Título do Cabeçalho')
+import streamlit as st
+import pandas as pd
 
-# Carregamento dos dados direto do Banco (Incluir dentro do GITHUB SQLLITE)
+
+
+
+st.write('**SIVIG-GILQ**')
+st.sidebar.header('Título do Cabeçalho')
+
+df = pd.read_csv('../BaseOriginais/SIVIG_GILQ_UTF8.csv', sep=';', encoding='utf-8')
+
+doença = df['CID Definitivo (codigo)'].drop_duplicates()
+
+escolha_doença = st.sidebar.selectbox('Escolha a Doença', doença)
 
 # Seleção de Doenças possíveis
-doença = # base de dados para coluna de Doença
-doença_escolhida = st.sidebar.selectbox('Selecionar Doença', doença)
+# doença_escolhida = st.sidebar.selectbox('Selecionar Doença', doença)
 
