@@ -1,4 +1,7 @@
-![Texto Alternativo](images/SIVIG_PRJ.png)
+<div align="center">
+  <img src="images/SIVIG_PRJ.png" width="200px">
+  <p><i>Legenda centralizada do seu projeto</i></p>
+</div>
 
 # 🏥 Predição Epidemiológica com Machine Learning
 
