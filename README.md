@@ -1,3 +1,5 @@
+![Texto Alternativo](images/SIVIG_PRJ.png)
+
 # 🏥 Predição Epidemiológica com Machine Learning
 
 ![Status do Projeto](https://img.shields.io/badge/status-em--desenvolvimento-yellow)
